@@ -1,0 +1,31 @@
+{
+  "folders": [
+    {
+      "path": "../../../../../../StudioProjects/Gocab"
+    },
+    {
+      "path": "../../../../../../StudioProjects/driver"
+    },
+    {
+      "path": "../../../../paywave"
+    },
+    {
+      "path": "../../../../../flutter_tutorial"
+    },
+    {
+      "path": "../../../../vester"
+    },
+    {
+      "path": "../../../../vester_driver"
+    },
+    {
+      "path": "../../../../sgadmin"
+    },
+    {
+      "path": "../../.."
+    }
+  ],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "sgpaypoint"
+  }
+}
