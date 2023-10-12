@@ -259,31 +259,6 @@ class _BuyCryptoState extends State<BuyCrypto> {
                                     ),
                                   ],
                                 ),
-                                // SizedBox(height: 30),
-                                // Container(
-                                //   padding: EdgeInsets.all(10),
-                                //   decoration: BoxDecoration(
-                                //     color: sgtheme.blackHomeColor,
-                                //     borderRadius: BorderRadius.circular(5),
-                                //   ),
-                                //   child: Row(
-                                //     mainAxisAlignment: MainAxisAlignment.center,
-                                //     children: [
-                                //       Icon(Icons.notifications,
-                                //           color: Colors.white),
-                                //       Expanded(
-                                //         child: Text(
-                                //           "Fill in amount you want to purchase and wallet address to receive:",
-                                //           style: TextStyle(
-                                //             color: Colors.white,
-                                //           ),
-                                //           softWrap: true,
-                                //           overflow: TextOverflow.clip,
-                                //         ),
-                                //       )
-                                //     ],
-                                //   ),
-                                // ),
                                 SizedBox(height: 5),
                                 DropdownButtonFormField(
                                     decoration: InputDecoration(

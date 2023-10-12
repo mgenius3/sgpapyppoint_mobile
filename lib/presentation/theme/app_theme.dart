@@ -18,5 +18,11 @@ MaterialColor bodyColor = MaterialColor(
 
 final ThemeData appTheme = ThemeData(
   primarySwatch: bodyColor,
+  textSelectionTheme: TextSelectionThemeData(
+    cursorColor: Colors.red, // Set your desired cursor color here
+    selectionHandleColor:
+        Colors.blue, // Optional: Change the selection handle color
+    selectionColor: Colors.grey, // Optional: Change the selection color
+  ),
   // Add more theme configurations as needed
 );

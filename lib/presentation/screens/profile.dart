@@ -23,9 +23,6 @@ class _ProfilePageState extends State<ProfilePage> {
   final bankTextEditingController = TextEditingController();
   Services api = Services();
 
-  _submit() {
-// https://sgpaypoint.com.ng/api/updateuser.php?username=nuel123&name=FM Nuel&bank=Access&acctno=0123456789&acctname=Femi Emmanuel
-  }
   Future<void> showUserNameDialogAlert(BuildContext context, String username) {
     final details = Provider.of<UserState>(context, listen: false).user;
 
@@ -53,7 +50,6 @@ class _ProfilePageState extends State<ProfilePage> {
                     var new_username =
                         userNameTextEditingController.text.trim();
                     var response = await api.Post(
-                        // "https://sgpaypoint.com.ng/api/updateuser.php?username=$new_username",
                         "https://sgpaypoint.com.ng/api/updateuser.php?username=$new_username&name=${details!.name}&bank=${details!.bank}&acctno=${details.acctno}&acctname=${details!.acctname}",
                         {});
 

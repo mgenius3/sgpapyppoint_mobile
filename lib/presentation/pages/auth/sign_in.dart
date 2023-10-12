@@ -11,6 +11,7 @@ import 'package:sgpaypoint/utils/helpers.dart';
 import 'package:sgpaypoint/data/models/user.dart';
 import 'package:sgpaypoint/data/state/user.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class SignIn extends StatefulWidget {
   @override
@@ -18,6 +19,7 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
+  final storage = FlutterSecureStorage();
   var logger = Logger();
   final AllTheme sgtheme = AllTheme();
   bool _isPasswordVisible = false;
@@ -65,6 +67,8 @@ class _SignInState extends State<SignIn> {
           //sending data to state management
           Provider.of<UserState>(context, listen: false)
               .updateUserDetails(response);
+          await storage.write(key: 'sign', value: 'true');
+
           Fluttertoast.showToast(msg: "You are successfully Signed In");
           Navigator.pushNamed(context, AppRoutes.main);
         }

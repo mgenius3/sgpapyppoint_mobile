@@ -39,23 +39,19 @@ class _AmexGiftCardScreenState extends State<AmexGiftCardScreen> {
   void initState() {
     super.initState();
     // Add listener to _emailFocusNode and _passwordFocusNode
-
     _amountFocusNode.addListener(_onFocusChange);
   }
 
   @override
   void dispose() {
     _amountFocusNode.removeListener(_onFocusChange);
-
     _amountFocusNode.dispose();
-
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     double screen_width = MediaQuery.of(context).size.width;
-
     return Scaffold(
         appBar: AppBar(
           title: Text(
