@@ -155,17 +155,17 @@ class _WalmartGiftCardScreenState extends State<WalmartGiftCardScreen> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
+                          const Text(
                             'Select Documents',
                             style: TextStyle(fontSize: 16.0),
                           ),
-                          Icon(Icons.attach_file),
+                          const Icon(Icons.attach_file),
                         ],
                       ),
                     ),
                   ),
                 ),
-                SizedBox(height: 30),
+                const SizedBox(height: 30),
                 GestureDetector(
                   onTap: null,
                   child: Container(
@@ -174,7 +174,7 @@ class _WalmartGiftCardScreenState extends State<WalmartGiftCardScreen> {
                     decoration: BoxDecoration(
                         color: sgtheme.cutomDarkColor,
                         borderRadius: BorderRadius.circular(5)),
-                    child: Text(
+                    child: const Text(
                       "Trade Walmart Gift Cards ",
                       style: TextStyle(color: Colors.white),
                       textAlign: TextAlign.center,
