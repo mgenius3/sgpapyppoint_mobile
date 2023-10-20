@@ -20,7 +20,11 @@ class _ChatPageState extends State<ChatPage> {
     super.initState();
     final user = Provider.of<UserState>(context, listen: false).user;
 
-    _databaseReference.child(user!.username).onValue.listen((event) {
+    _databaseReference
+        .child('chat')
+        .child(user!.username)
+        .onValue
+        .listen((event) {
       final messageData = jsonDecode(jsonEncode(event.snapshot.value));
       setState(() {
         _messages = messageData["messages"];

@@ -4,6 +4,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:sgpaypoint/presentation/theme/main_theme.dart';
 import "../routes.dart";
 import 'package:sgpaypoint/services/api_service.dart';
+import 'package:sgpaypoint/presentation/screens/sell_crypto/confirmation.dart';
 
 class SellCrpto extends StatefulWidget {
   const SellCrpto({super.key});
@@ -322,7 +323,16 @@ class _SellCrptoState extends State<SellCrpto> {
                         ),
                         SizedBox(height: 20),
                         GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (_) => SellCryptoConfirmation(
+                                          crypto_name:
+                                              dialog_display["crypto_name"]
+                                                  [dialog_display_index],
+                                        )));
+                          },
                           child: Container(
                             padding: EdgeInsets.all(12),
                             decoration: BoxDecoration(
@@ -330,7 +340,7 @@ class _SellCrptoState extends State<SellCrpto> {
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: Text(
-                              "Sell ${dialog_display["crypto_name"][dialog_display_index]}",
+                              "Next ->",
                               style: TextStyle(
                                 color: Colors.white,
                               ),

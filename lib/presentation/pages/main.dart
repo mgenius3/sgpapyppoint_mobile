@@ -4,7 +4,7 @@ import 'package:sgpaypoint/utils/mode.dart';
 import 'package:sgpaypoint/presentation/theme/main_theme.dart';
 import 'package:sgpaypoint/presentation/screens/profile.dart';
 import 'package:sgpaypoint/presentation/screens/trade.dart';
-import 'package:sgpaypoint/presentation/pages/trade_giftcard.dart';
+import 'package:sgpaypoint/presentation/pages/sell_giftcard.dart';
 import 'package:sgpaypoint/presentation/pages/airtime.dart';
 
 class MainPage extends StatefulWidget {
@@ -44,7 +44,7 @@ class _MainPageState extends State<MainPage>
           children: [
             HomePage(),
             TradePage(),
-            TradeGiftCard(),
+            SellGiftCard(),
             AirtimePurchase(),
             ProfilePage(),
           ]),

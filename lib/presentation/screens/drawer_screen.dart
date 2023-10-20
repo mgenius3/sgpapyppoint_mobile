@@ -77,7 +77,26 @@ class DrawerScreen extends StatelessWidget {
                   ),
                   trailing: Icon(Icons.arrow_forward_ios, size: 15),
                   onTap: () {
-                    Navigator.pushNamed(context, AppRoutes.trade_giftcard);
+                    Navigator.pushNamed(context, AppRoutes.sell_giftcard);
+                  },
+                ),
+                ListTile(
+                  iconColor:
+                      darkMode ? sgtheme.cutomDarkColor : sgtheme.customColor,
+                  leading: Icon(Icons.card_giftcard,
+                      color: darkMode
+                          ? sgtheme.cutomDarkColor
+                          : sgtheme.customColor),
+                  title: Text(
+                    'Buy Giftcard',
+                    style: TextStyle(
+                        color: darkMode
+                            ? sgtheme.cutomDarkColor
+                            : sgtheme.customColor),
+                  ),
+                  trailing: Icon(Icons.arrow_forward_ios, size: 15),
+                  onTap: () {
+                    Navigator.pushNamed(context, AppRoutes.buy_giftcard);
                   },
                 ),
                 ListTile(

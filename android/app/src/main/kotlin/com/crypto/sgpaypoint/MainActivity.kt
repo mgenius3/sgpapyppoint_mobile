@@ -1,4 +1,4 @@
-package com.example.sgpaypoint
+package com.crypto.sgpaypoint
 
 import io.flutter.embedding.android.FlutterActivity
 

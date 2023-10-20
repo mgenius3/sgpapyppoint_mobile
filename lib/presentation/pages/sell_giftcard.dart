@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:sgpaypoint/presentation/routes.dart';
 import 'package:sgpaypoint/presentation/theme/main_theme.dart';
 import '../../utils/mode.dart';
+import '../screens/sell_giftcard/index.dart';
 
-class TradeGiftCard extends StatelessWidget {
-  const TradeGiftCard({super.key});
+class SellGiftCard extends StatelessWidget {
+  const SellGiftCard({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,7 @@ class TradeGiftCard extends StatelessWidget {
       backgroundColor: Color.fromARGB(237, 255, 255, 255),
       appBar: AppBar(
         title: Text(
-          "Trade Giftcard",
+          "Sell Giftcard",
           textAlign: TextAlign.center,
         ),
         leading: IconButton(
@@ -38,8 +39,16 @@ class TradeGiftCard extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(
-                          context, AppRoutes.trade_giftcard_amex);
+                      // Navigator.pushNamed(context, AppRoutes.buy_giftcard_amex);
+
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SellGiftCardScreen(
+                                    giftcard_name: "AMEX",
+                                    image_url:
+                                        'public/images/america_express_logo-removebg-preview.png',
+                                  )));
                     },
                     child: Container(
                       width: screen_width * 0.4,
@@ -61,8 +70,16 @@ class TradeGiftCard extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(
-                          context, AppRoutes.trade_giftcard_google_play);
+                      // Navigator.pushNamed(
+                      //     context, AppRoutes.buy_giftcard_google_play);
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SellGiftCardScreen(
+                                    giftcard_name: "Google Play",
+                                    image_url:
+                                        'public/images/google_play_logo-removebg-preview.png',
+                                  )));
                     },
                     child: Container(
                       width: screen_width * 0.4,
@@ -84,8 +101,15 @@ class TradeGiftCard extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(
-                          context, AppRoutes.trade_giftcard_macy);
+                      // Navigator.pushNamed(context, AppRoutes.buy_giftcard_macy);
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SellGiftCardScreen(
+                                    giftcard_name: "Macy",
+                                    image_url:
+                                        'public/images/Macys-logo-removebg-preview.png',
+                                  )));
                     },
                     child: Container(
                       width: screen_width * 0.4,
@@ -107,8 +131,16 @@ class TradeGiftCard extends StatelessWidget {
                   ),
                   GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(
-                            context, AppRoutes.trade_giftcard_nordstorm);
+                        // Navigator.pushNamed(
+                        //     context, AppRoutes.buy_giftcard_nordstorm);
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SellGiftCardScreen(
+                                      giftcard_name: "Nordstorm",
+                                      image_url:
+                                          'public/images/nordstorm_logo-removebg-preview.png',
+                                    )));
                       },
                       child: Container(
                         width: screen_width * 0.4,
@@ -129,8 +161,17 @@ class TradeGiftCard extends StatelessWidget {
                       )),
                   GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(
-                          context, AppRoutes.trade_giftcard_walmart);
+                      // Navigator.pushNamed(
+                      //     context, AppRoutes.buy_giftcard_walmart);
+
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SellGiftCardScreen(
+                                    giftcard_name: "Walmart",
+                                    image_url:
+                                        'public/images/walmart_logo-removebg-preview.png',
+                                  )));
                     },
                     child: Container(
                       width: screen_width * 0.4,
@@ -152,8 +193,15 @@ class TradeGiftCard extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(
-                          context, AppRoutes.trade_giftcard_steam);
+                      // Navigator.pushNamed(
+                      //     context, AppRoutes.buy_giftcard_steam);
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SellGiftCardScreen(
+                                    giftcard_name: "Steam",
+                                    image_url: 'public/images/steam_logo.png',
+                                  )));
                     },
                     child: Container(
                       width: screen_width * 0.4,
@@ -175,8 +223,16 @@ class TradeGiftCard extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(
-                          context, AppRoutes.trade_giftcard_razer);
+                      // Navigator.pushNamed(
+                      //     context, AppRoutes.buy_giftcard_razer);
+
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SellGiftCardScreen(
+                                    giftcard_name: "Razer",
+                                    image_url: 'public/images/razor_logo.png',
+                                  )));
                     },
                     child: Container(
                       width: screen_width * 0.4,
@@ -198,8 +254,17 @@ class TradeGiftCard extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(
-                          context, AppRoutes.trade_giftcard_amazon);
+                      // Navigator.pushNamed(
+                      //     context, AppRoutes.buy_giftcard_amazon);
+
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SellGiftCardScreen(
+                                    giftcard_name: "Amazon",
+                                    image_url:
+                                        'public/images/amazon-removebg-preview.png',
+                                  )));
                     },
                     child: Container(
                       width: screen_width * 0.4,
@@ -221,8 +286,17 @@ class TradeGiftCard extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(
-                          context, AppRoutes.trade_giftcard_itunes);
+                      // Navigator.pushNamed(
+                      //     context, AppRoutes.buy_giftcard_itunes);
+
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SellGiftCardScreen(
+                                    giftcard_name: "Itunes",
+                                    image_url:
+                                        'public/images/itunes-removebg-preview.png',
+                                  )));
                     },
                     child: Container(
                       width: screen_width * 0.4,
@@ -244,8 +318,15 @@ class TradeGiftCard extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(
-                          context, AppRoutes.trade_giftcard_ebay);
+                      // Navigator.pushNamed(context, AppRoutes.buy_giftcard_ebay);
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SellGiftCardScreen(
+                                    giftcard_name: "Ebay",
+                                    image_url:
+                                        'public/images/ebay-removebg-preview.png',
+                                  )));
                     },
                     child: Container(
                       width: screen_width * 0.4,
