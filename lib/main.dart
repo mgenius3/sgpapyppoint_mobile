@@ -7,7 +7,6 @@ import 'package:sgpaypoint/presentation/pages/splash.dart';
 import 'package:provider/provider.dart';
 import 'package:sgpaypoint/data/state/trade_value.dart';
 import 'package:sgpaypoint/data/state/user.dart';
-
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 

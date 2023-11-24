@@ -1,0 +1,47 @@
+name: Build and deploy iOS app
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-deploy-ios:
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Flutter environment
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'adopt'
+          java-version: '11'
+
+      - name: Cache Flutter SDK
+        uses: actions/cache@v3
+        with:
+          path: '~\Library\Application Support\flutter'
+          key: '${{ runner.os }}-flutter-${{ hashFiles('**/flutter/version') }}'
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build iOS app
+        run: flutter build ios --no-codesign
+        env:
+          FLUTTER_BUILD_MODE: release
+
+      - name: Archive iOS app
+        run: xcodebuild -archive -scheme Runner -destination "generic/platform=iOS" -configuration Release
+        env:
+          FLUTTER_BUILD_MODE: release
+
+      - name: Upload IPA file to App Store Connect
+        uses: apple/upload-to-app-store@v1
+        with:
+          connect-team-id: AU5SWS5R62
+          file-path: build/ios/archive/Runner.xcarchive/Products/Applications/Runner.app.ipa

@@ -1,17 +1,16 @@
 import 'dart:convert';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 refactor_response_obj(response) {
   return jsonDecode(jsonEncode(response));
 }
 
-final String whatsappUrl = "https://wa.me/+2348134460259";
-
 // Function to open WhatsApp
-void openWhatsApp() async {
-  if (await canLaunch(whatsappUrl)) {
-    await launch(whatsappUrl);
+void openLink(String link) async {
+  if (await canLaunch(link)) {
+    await launch(link);
   } else {
     throw 'Could not launch WhatsApp';
   }

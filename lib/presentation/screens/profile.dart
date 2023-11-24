@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 import 'package:sgpaypoint/presentation/routes.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:sgpaypoint/services/api_service.dart';
+import 'package:sgpaypoint/utils/helpers.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -410,7 +411,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         ),
                         trailing: Icon(Icons.arrow_forward_ios, size: 15),
                         onTap: () {
-                          // Navigator.pushNamed(context, AppRoutes.trade_giftcard);
+                          openLink('https://instagram.com/mgeniusoftware');
                         },
                       ),
                       ListTile(
@@ -425,7 +426,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         ),
                         trailing: Icon(Icons.arrow_forward_ios, size: 15),
                         onTap: () {
-                          // Navigator.pushNamed(context, AppRoutes.trade_giftcard);
+                          openLink('https://twitter.com/mgeniusoftware');
                         },
                       ),
                       ListTile(
@@ -440,7 +441,7 @@ class _ProfilePageState extends State<ProfilePage> {
                           ),
                           trailing: Icon(Icons.arrow_forward_ios, size: 15),
                           onTap: () {
-                            // Navigator.pushNamed(context, AppRoutes.trade_giftcard);
+                            openLink('https://facebook.com/mgeniusoftware');
                           }),
                       SizedBox(height: 30),
                       ListTile(

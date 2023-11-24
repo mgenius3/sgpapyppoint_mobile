@@ -224,10 +224,6 @@ class _HomePageState extends State<HomePage> {
                         SizedBox(
                           height: 5,
                         ),
-                        // Image.asset(
-                        //   "public/images/${darkmode ? 'dark_makedep.png' : 'light_makedep.png'}",
-                        //   fit: BoxFit.fill,
-                        // )
                         Divider(
                           thickness: 0.1,
                           height: 20,
@@ -271,7 +267,10 @@ class _HomePageState extends State<HomePage> {
                                   )
                                 ])),
                             GestureDetector(
-                                onTap: null,
+                                onTap: () {
+                                  Navigator.pushNamed(
+                                      context, AppRoutes.withdraw);
+                                },
                                 child: Column(children: [
                                   Container(
                                       padding: EdgeInsets.all(10),
@@ -348,8 +347,7 @@ class _HomePageState extends State<HomePage> {
                 child: FloatingActionButton(
                   backgroundColor: darkmode ? sgtheme.blackColor : Colors.white,
                   onPressed: () {
-                    // Navigator.pushNamed(context, AppRoutes.chat);
-                    openWhatsApp();
+                    openLink("https://wa.me/+2348134460259");
                   },
                   child: Icon(FontAwesomeIcons.whatsapp,
                       color: darkmode
@@ -381,7 +379,6 @@ class _HomePageState extends State<HomePage> {
               child: FloatingActionButton(
                 backgroundColor: darkmode ? sgtheme.blackColor : Colors.white,
                 onPressed: () {
-                  // Navigator.pushNamed(context, AppRoutes.chat);
                   toggleChat();
                 },
                 child: Icon(

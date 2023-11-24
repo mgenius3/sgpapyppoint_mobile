@@ -23,28 +23,15 @@ class UserState extends ChangeNotifier {
 
     DateTime expiryDate = DateTime.now()
         .add(Duration(hours: 12)); // Example: Data expires in 7 days
-    await storage.write(
-        key: 'user_data',
-        // value: jsonEncode({
-        //   "username": refactor_user_details["Username"] ?? "",
-        //   "email": refactor_user_details["Email"] ?? "",
-        //   'name': refactor_user_details["Name"] ?? "",
-        //   'naira_Wallet_Balance':
-        //       refactor_user_details["Naira Wallet Balance"] ?? "",
-        //   'bonus_wallet_Balance':
-        //       refactor_user_details["Bonus Wallet Balance"] ?? "",
-        //   'id': refactor_user_details["id"] ?? "",
-        //   'bank': refactor_user_details["Bank"] ?? "",
-        //   'acctno': refactor_user_details["Account Number"] ?? "",
-        //   'acctname': refactor_user_details["Account Name"] ?? "",
-        // })
-        value: jsonEncode(user_data));
+    await storage.write(key: 'user_data', value: jsonEncode(user_data));
     await storage.write(key: 'expiryDate', value: expiryDate.toIso8601String());
 
     notifyListeners();
   }
 
-  void clearUserData() {
+  void clearUserData() async {
+    await storage.delete(key: 'user_data');
+    await storage.delete(key: 'expiryDate');
     user = null;
     notifyListeners();
   }
