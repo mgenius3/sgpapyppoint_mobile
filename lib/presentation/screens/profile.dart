@@ -57,7 +57,8 @@ class _ProfilePageState extends State<ProfilePage> {
                     Fluttertoast.showToast(msg: 'successfully updated');
                     Navigator.pop(context);
                   },
-                  child: Text("OK", style: TextStyle(color: Colors.black))),
+                  child:
+                      const Text("OK", style: TextStyle(color: Colors.black))),
             ],
           );
         });
@@ -65,8 +66,6 @@ class _ProfilePageState extends State<ProfilePage> {
 
   Future<void> showNameDialogAlert(BuildContext context, String username) {
     final details = Provider.of<UserState>(context, listen: false).user;
-
-    print(details!.acctname);
 
     userNameTextEditingController.text = username;
     return showDialog(
@@ -91,7 +90,6 @@ class _ProfilePageState extends State<ProfilePage> {
                   onPressed: () async {
                     var new_name = userNameTextEditingController.text.trim();
                     var response = await api.Post(
-                        // "https://sgpaypoint.com.ng/api/updateuser.php?username=$new_username",
                         "https://sgpaypoint.com.ng/api/updateuser.php?username=${details!.username}&name=${new_name}&bank=${details!.bank}&acctno=${details.acctno}&acctname=${details!.acctname}",
                         {});
 

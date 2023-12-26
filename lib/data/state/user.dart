@@ -5,7 +5,7 @@ import 'dart:convert';
 
 class UserState extends ChangeNotifier {
   User? user;
-  final storage = FlutterSecureStorage();
+  final storage = const FlutterSecureStorage();
 
   void updateUserDetails(user_data) async {
     var refactor_user_details = user_data['items'][0];

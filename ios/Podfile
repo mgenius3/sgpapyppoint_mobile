@@ -1,0 +1,43 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '9.0'
+
+target 'Runner' do
+    # Comment the next line if you don't want to use dynamic frameworks
+    use_frameworks!
+  
+    # Flutter Pods
+    flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+  
+    # Add your other CocoaPods dependencies here
+    pod 'FlutterToast', '~> 8.2.2'
+    pod 'Provider', '~> 6.0.5'
+    pod 'EmailValidator', '~> 2.1.16'
+    pod 'FlutterSvg', '~> 2.0.5'
+    pod 'Logger', '~> 2.0.1'
+    pod 'FilePicker', '~> 5.3.1'
+    pod 'fl_chart', '~> 0.62.0'
+    pod 'http', '~> 0.13.6'
+    pod 'Charts', '~> 0.12.0'
+    pod 'Firebase/Database', '~> 10.0.14'
+    pod 'FontAwesome', '~> 10.4.0'
+    pod 'flutter_chat_ui', '~> 1.6.6'
+    pod 'Firebase/Core', '~> 8.0.0'
+    pod 'mailer', '~> 6.0.1'
+    pod 'FlutterSecureStorage', '~> 8.1.0'
+    pod 'Firebase/Storage', '~> 8.0.0'
+  
+    # Include pods for Firebase
+    pod 'Firebase/Auth'
+    pod 'Firebase/Firestore'
+    pod 'Firebase/Storage'
+  
+  end
+  
+  post_install do |installer|
+    installer.pods_project.targets.each do |target|
+      target.build_configurations.each do |config|
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '9.0'
+      end
+    end
+  end
+  
